@@ -1,1 +1,2 @@
 # mobility
+npm start
