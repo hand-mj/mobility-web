@@ -1,0 +1,33 @@
+#HeaderLogo {
+    height: 45px;
+    margin: 0 70% 0 0;
+}
+
+#HeaderSearch {
+    height: 25px;
+    margin: 0 30px 0 0;
+   
+}
+
+#HeaderLogin {
+    background-color: white;
+    border: none;
+    margin: 0 30px 0 0;
+}
+
+#HeaderProfile {
+    height: 45px;
+    margin: 0 30px 0 0;
+}
+
+/* 페이지 내용 들어가는 부분 */
+#HomeBox {
+    background-color: rgba(255, 255, 255, 255);
+
+    width: 60%;
+    height: 100vh;
+    background-position: center;
+    display: flex;
+    
+    margin: 0 auto;
+}
