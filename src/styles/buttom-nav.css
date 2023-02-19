@@ -12,12 +12,17 @@
   nav {
     overflow: hidden;
     border-top: 1px solid grey;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+
   /* nav태그 아래의 div태그들을 수평정렬 및 세로길이 설정 */
   nav > div {
-    /* 수평정렬, 5개의 button을 각각 20% width만큼 할당 */
+    /* 수평정렬, button을 width만큼 할당 */
     float: left;
-    width: 33.3%;
+    width: 13%;
     text-align: center;
   
     /* 세로길이 설정 */

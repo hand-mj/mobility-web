@@ -6,10 +6,61 @@ import styled from 'styled-components';
 import React from 'react';
 import oc from 'open-color';
 import { shadow, media } from '../styles/header-util';
+import PropTypes from 'prop-types';
 
 import ProfileImage from '../assets/profile.png';
 import LogoImage from '../assets/logo1.png';
 import SearchImage from '../assets/search.png';
+
+function HeaderLink({ link, children, onClick }) {
+    const theme = useTheme();
+
+    return (
+        <div
+            css={css`
+                position: relative;
+            `}
+        >
+            <a
+                href={link}
+                css={css`
+                    font-size: 1.1rem;
+                    font-weight: bold;
+
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 0 20px;
+                `}
+            >
+                {children}
+            </a>
+            {onClick ? (
+                <div
+                    css={css`
+                        position: absolute;
+                        bottom: 1px;
+                        left: 0;
+                        width: 100%;
+                        height: 8px;
+                        background-color: ${theme.colors.white};
+                    `}
+                />
+            ) : undefined}
+        </div>
+    );
+}
+
+HeaderLink.propTypes = {
+    link: PropTypes.string.isRequired,
+    children: PropTypes.node.isRequired,
+    onClick: PropTypes.bool,
+};
+
+HeaderLink.defaultProps = {
+    onClick: false,
+};
 
 // 상단 고정, 그림자
 const Positioner = styled.div`
@@ -65,7 +116,7 @@ const Header = ({children}) => {
                         <img id="HeaderSearch"
                             src={SearchImage}
                         />
-                        <button id="HeaderLogin">로그인</button>
+                        <HeaderLink link="/login"><button id="HeaderLogin">로그인</button></HeaderLink>
                         <img id="HeaderProfile"
                             src={ProfileImage}
                         />
