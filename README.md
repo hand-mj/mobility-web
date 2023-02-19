@@ -1,6 +1,6 @@
 <<<<<<< HEAD
 # mobility
-npm start
+### 'npm install'
 =======
 # Getting Started with Create React App
 
